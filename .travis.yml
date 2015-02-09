@@ -11,6 +11,9 @@ env:
   global:
     - CI_HOME=`pwd`
 
+before_script:
+  - CLASSPATH=$CLASSPATH;$CI_HOME/Quorum3/Run
+
 script: cd $CI_HOME/Quorum3 && ./build.sh
 
 notifications:
