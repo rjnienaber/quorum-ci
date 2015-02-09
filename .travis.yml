@@ -7,7 +7,12 @@ jdk:
 os:
   - linux
 
-script: cd Quorum3 && ./build.sh
+env:
+  global:
+    - REPO="rjnienaber/quorum-ci"
+    - CI_HOME=`pwd`/$REPO
+
+script: cd $CI_HOME/Quorum3 && ./build.sh
 
 notifications:
   email: false
