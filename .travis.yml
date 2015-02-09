@@ -10,7 +10,7 @@ os:
 env:
   global:
     - CI_HOME=`pwd`
-    - CLASSPATH=$CLASSPATH:$CI_HOME/Quorum3/Run/*
+    - CLASSPATH=$CLASSPATH:$CI_HOME/Quorum3/Run/Default.jar
 
 script: cd $CI_HOME/Quorum3 && ./build.sh
 
