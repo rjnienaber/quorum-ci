@@ -1,6 +1,7 @@
 #!/bin/sh
 #This script builds the Quorum 3.0 compiler from source.
 
+set -e
 
 #First create a new folder called Quorum3Compiler
 mkdir Quorum3Compiler
