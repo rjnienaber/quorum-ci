@@ -9,8 +9,7 @@ os:
 
 env:
   global:
-    - REPO="rjnienaber/quorum-ci"
-    - CI_HOME=`pwd`/$REPO
+    - CI_HOME=`pwd`
 
 script: cd $CI_HOME/Quorum3 && ./build.sh
 
