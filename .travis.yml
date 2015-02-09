@@ -1,5 +1,5 @@
 language: java
-sudo: true
+sudo: false
 
 jdk:
   - oraclejdk7
@@ -7,19 +7,7 @@ jdk:
 os:
   - linux
 
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq tree
-
-env:
-  global:
-    - CI_HOME=`pwd`
-    - CLASSPATH=$CLASSPATH:$CI_HOME/Quorum3/Run/Default.jar
-
 script: cd $CI_HOME/Quorum3 && ./build.sh
-
-after_script:
-  - tree
 
 notifications:
   email: false
