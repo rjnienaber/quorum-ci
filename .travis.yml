@@ -7,7 +7,7 @@ jdk:
 os:
   - linux
 
-script: Quorum3/build.sh
+script: cd Quorum3 && ./build.sh
 
 notifications:
   email: false
