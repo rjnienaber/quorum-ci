@@ -1,18 +1,19 @@
 #!/bin/sh
 #This script builds the Quorum 3.0 compiler from source.
 
+set -e
 
 #First create a new folder called Quorum3Compiler
 mkdir Quorum3Compiler
 
 echo "Copying Quorum 2 compiler."
-cp -r Run/ Quorum3Compiler
+cp -r Run/* Quorum3Compiler
 
 echo "Copying Latest Libraries."
 cp -r Library Quorum3Compiler
 
 echo "Copying Latest SourceCode"
-cp -r SourceCode/ Quorum3Compiler
+cp -r SourceCode/* Quorum3Compiler
 cd Quorum3Compiler
 
 echo "Compiling Quorum 3 in Quorum 2"
