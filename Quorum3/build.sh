@@ -1,18 +1,30 @@
 #!/bin/sh
 #This script builds the Quorum 3.0 compiler from source.
 
+echo "Copying missing tests"
+cp ../quorum/test/tests/ifstatement/Pass/IfStatementOneCondition_Const.quorum Library/Tests/IfStatement/Pass/IfStatementOneCondition_Const.quorum
+cp ../quorum/test/tests/ifstatement/Pass/IfStatementOneCondition_Equal.quorum Library/Tests/IfStatement/Pass/IfStatementOneCondition_Equal.quorum
+cp ../quorum/test/tests/ifstatement/Pass/IfStatementOneCondition_GT.quorum Library/Tests/IfStatement/Pass/IfStatementOneCondition_GT.quorum
+cp ../quorum/test/tests/ifstatement/Pass/IfStatementOneCondition_GTE.quorum Library/Tests/IfStatement/Pass/IfStatementOneCondition_GTE.quorum
+cp ../quorum/test/tests/ifstatement/Pass/IfStatementOneCondition_LT.quorum Library/Tests/IfStatement/Pass/IfStatementOneCondition_LT.quorum
+cp ../quorum/test/tests/ifstatement/Pass/IfStatementOneCondition_LTE.quorum Library/Tests/IfStatement/Pass/IfStatementOneCondition_LTE.quorum
+cp ../quorum/test/tests/ifstatement/Pass/IfStatementOneCondition_NotEqual.quorum Library/Tests/IfStatement/Pass/IfStatementOneCondition_NotEqual.quorum
+cp ../quorum/test/tests/ifstatement/Pass/IfStatementOneCondition_Var.quorum Library/Tests/IfStatement/Pass/IfStatementOneCondition_Var.quorum
+
+set -e
 
 #First create a new folder called Quorum3Compiler
+rm -rf Quorum3Compiler
 mkdir Quorum3Compiler
 
 echo "Copying Quorum 2 compiler."
-cp -r Run/ Quorum3Compiler
+cp -r Run/* Quorum3Compiler
 
 echo "Copying Latest Libraries."
 cp -r Library Quorum3Compiler
 
 echo "Copying Latest SourceCode"
-cp -r SourceCode/ Quorum3Compiler
+cp -r SourceCode/* Quorum3Compiler
 cd Quorum3Compiler
 
 echo "Compiling Quorum 3 in Quorum 2"
